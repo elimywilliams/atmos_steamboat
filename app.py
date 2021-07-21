@@ -46,7 +46,7 @@ countryOPTS = [  ]
 
 stateOPTS = [{'label':'Polygon 1','value':"P1"}]
 
-polyOPTS = [{'label':str('Polygon ') + str(x),'value':str('P')+str(x)} for x in list(range(1,0+1))]
+polyOPTS = [{'label':str('Polygon ') + str(x),'value':str('P')+str(x)} for x in list(range(1,1+1))]
 
 
 fnameDict = {'P1': allLeaks.loc[allLeaks.POLYGON == "P1",].LEAKNUM.unique()}
