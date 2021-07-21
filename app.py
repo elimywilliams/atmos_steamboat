@@ -112,17 +112,32 @@ tab1=html.Div([
     #href='https://github.com/czbiohub/singlecell-dash/issues/new',
     id = 'map_dir',target='_blank',
     ),
-                        html.Div( [
+    
+        
+        
+                                html.Div( [
     dcc.ConfirmDialogProvider(
-        children=html.Button(
-            'Confirm: Leak Checked',
-            id = 'submit_button',
-        ),
+        children=html.A(html.Button('Confirm: Leak Check'),
+    #href='https://github.com/czbiohub/singlecell-dash/issues/new',
+    id = 'form_dir',target='_blank',
+    ),
         id='danger-provider',
         message='Danger danger! Are you sure you want to continue?'
     ),
     html.Div(id='output-provider')
 ],className = 'dcc_control')
+        
+#                        html.Div( [
+#    dcc.ConfirmDialogProvider(
+#        children=html.Button(
+#            'Confirm: Leak Checked',
+#            id = 'submit_button',
+#        ),
+#        id='danger-provider',
+#        message='Danger danger! Are you sure you want to continue?'
+#    ),
+#    html.Div(id='output-provider')
+#],className = 'dcc_control')
 
                        # dcc.RadioItems(
                        #     id="popratiostate",
@@ -710,6 +725,19 @@ def updatePlot(whichPoly,whichLeak,whichMap):
             )
      fig.update()
      return fig
+     
+     
+     
+@app.callback(
+    dash.dependencies.Output('form_dir', 'href'),
+    [dash.dependencies.Input('whichPoly', 'value'),
+     dash.dependencies.Input('opt-dropdown', 'value'),
+     ])
+def giveformURL(whichPoly,whichLeak):
+    url = 'https://forms.gle/rDNgkJCNtAuwCLCj7'
+    return(url)
+
+
  
 @app.callback(
     dash.dependencies.Output('map_dir', 'href'),
