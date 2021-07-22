@@ -775,7 +775,7 @@ def updateText(whichPolygon):
               )
 def updatePolyLk(whichPolygon):
     dat = allLeaks.loc[allLeaks.POLYGON==str(whichPolygon),]
-    return "Number of Leaks: " + str(dat.shape[0])
+    return "Number of Indications: " + str(dat.shape[0])
 
 @app.callback(dash.dependencies.Output('polyname', 'children'),
               [dash.dependencies.Input('whichPolyGap', 'value')]
