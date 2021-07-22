@@ -26,6 +26,7 @@ px.set_mapbox_access_token('pk.eyJ1IjoiZXdpbGxpYW1zMjAyMCIsImEiOiJja2FpdTIxOXMwM
 allPoly = pd.read_csv('https://raw.githubusercontent.com/elimywilliams/atmos_steamboat/main/allPoly.csv')
 allGaps = pd.read_csv('https://raw.githubusercontent.com/elimywilliams/atmos-trial-steamboat/master/allGaps.csv')
 allLeaks = pd.read_csv('https://raw.githubusercontent.com/elimywilliams/atmos_steamboat/main/allLeaksWin.csv')
+allLeaks = pd.read_csv('https://raw.githubusercontent.com/elimywilliams/atmos-trial-steamboat/master/allLeaksWin.csv')
 
 #### CREATING A LIST OF THE POLYGONS THAT HAVE BEEN CHECKED
 checked = []
