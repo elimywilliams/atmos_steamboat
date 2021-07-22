@@ -46,7 +46,7 @@ whichMapOPTS = [
 countryOPTS = [  ]
 
 ## change this with a new web app (add line for each polygon that is had
-stateOPTS = [{'label':'Polygon 1','value':"P1"}]
+#stateOPTS = [{'label':'Polygon 1','value':"P1"}]
 
 polyOPTS = [{'label':str('Polygon ') + str(x),'value':str('P')+str(x)} for x in list(range(1,1+1))]
 
@@ -230,7 +230,7 @@ tab2=html.Div([
                        dcc.Dropdown(
                             id="whichPolyGap",
                             #options=well_status_options,
-                            options = stateOPTS,
+                            options = polyOPTS,
                             #multi=True,
                             #value=list(WELL_STATUSES.keys()),
                             value = 'P1',
