@@ -21,6 +21,8 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css',
                         ]
 px.set_mapbox_access_token('pk.eyJ1IjoiZXdpbGxpYW1zMjAyMCIsImEiOiJja2FpdTIxOXMwM2wzMnFtbmVmb3IzZDJ6In0.TVsQ-iu8bN4PQLkBCr6tQQ')
 
+### change this with a new web app
+
 allPoly = pd.read_csv('https://raw.githubusercontent.com/elimywilliams/atmos-trial-steamboat/master/allPoly.csv')
 allGaps = pd.read_csv('https://raw.githubusercontent.com/elimywilliams/atmos-trial-steamboat/master/allGaps.csv')
 allLeaks = pd.read_csv('https://raw.githubusercontent.com/elimywilliams/atmos-trial-steamboat/master/allLeaksWin.csv')
@@ -39,11 +41,11 @@ popOPTS = [ ]
 whichMapOPTS = [
     {'label':'Satellite Map','value':'sat'},
     {'label':'Street Map', 'value':'street'}
-       
     ]
 
 countryOPTS = [  ]
 
+## change this with a new web app (add line for each polygon that is had
 stateOPTS = [{'label':'Polygon 1','value':"P1"}]
 
 polyOPTS = [{'label':str('Polygon ') + str(x),'value':str('P')+str(x)} for x in list(range(1,1+1))]
@@ -93,7 +95,7 @@ tab1=html.Div([
                             value = 'P1',
                             className="dcc_control",
                         ),
-                        html.P("Choose Leak Number:", className="control_label"),
+                        html.P("Choose Indication Number:", className="control_label"),
                         dcc.Dropdown(
                             id='opt-dropdown',
                             #options=[{'label':opt, 'value':opt} for opt in nestedOptions],
