@@ -696,7 +696,7 @@ def updatePlot(whichPoly,whichLeak,whichMap):
      elif whichMap != 'sat':
         color_discrete_lks = color_discrete_lks_ns
         
-     title = "Leak " + str(whichLeak) + '. '+ " Location: " + str(float(dat.reset_index().loc[0,['Latitude']])) + ',' + str(float(dat.reset_index().loc[0,['Longitude']]))
+     title = "Indication " + str(whichLeak) + '. '+ " Location: " + str(float(dat.reset_index().loc[0,['Latitude']])) + ',' + str(float(dat.reset_index().loc[0,['Longitude']]))
      fig = px.scatter_mapbox(dat, lat="Latitude", lon="Longitude", 
                    size_max=25, zoom=15,
                   hover_data = {'PolyLK'},
