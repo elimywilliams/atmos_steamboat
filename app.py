@@ -43,7 +43,6 @@ whichMapOPTS = [
     {'label':'Street Map', 'value':'street'}
     ]
 
-countryOPTS = [  ]
 
 ## change this with a new web app (add line for each polygon that is had
 #stateOPTS = [{'label':'Polygon 1','value':"P1"}]
@@ -52,14 +51,6 @@ polyOPTS = [{'label':str('Polygon ') + str(x),'value':str('P')+str(x)} for x in 
 
 
 fnameDict = {'P1': allLeaks.loc[allLeaks.POLYGON == "P1",].LEAKNUM.unique()}
-
-
-gapSize = 10
-gnameDict = {'P1':list(range(1,int(allGaps.loc[allGaps.POLYGON == 'P1',].portion.unique().size/gapSize)+1)),
-             'P2':list(range(1,int(allGaps.loc[allGaps.POLYGON == 'P2',].portion.unique().size/gapSize)+1)),
-             'P3':list(range(1,int(allGaps.loc[allGaps.POLYGON == 'P3',].portion.unique().size/gapSize)+1)),
-             'P4':list(range(1,int(allGaps.loc[allGaps.POLYGON == 'P4',].portion.unique().size/gapSize)+1))             
-             }
 
 
 gsizeDict = {}
@@ -119,7 +110,7 @@ tab1=html.Div([
         
                                 html.Div( [
     dcc.ConfirmDialogProvider(
-        children=html.A(html.Button('Confirm: Leak Check'),
+        children=html.A(html.Button('Confirm: Indication Checked'),
     #href='https://github.com/czbiohub/singlecell-dash/issues/new',
     id = 'form_dir',target='_blank',
     ),
@@ -378,7 +369,7 @@ app.layout = html.Div(
                         html.Div(
                             [
                                 html.H3(
-                                    "Southern Cross Gap and Leak Indications",
+                                    "Southern Cross Technician Investigations",
                                     style={"margin-bottom": "0px"},
                                 ),
                                 html.H5(
@@ -836,8 +827,8 @@ def giveGAPURL(whichPoly,whichGap):
     )
 def whichDanger(polygon,leak):
     if not polygon or not leak:
-        return (str("Please Choose a Polygon and Leak"))
-    return(str("Confirm: I checked Leak Number: " + str(leak) + ' in Polygon ' + str(polygon[1:])))
+        return (str("Please Choose a Polygon and Indication"))
+    return(str("Confirm: I checked Indication Number: " + str(leak) + ' in Polygon ' + str(polygon[1:])))
     #return('hi')
     #return({'message':'hi'})
     
@@ -873,7 +864,7 @@ def update_output(submit_n_clicks,whichPoly,whichLeak):
 #     whichDonePush.to_csv()
 
      return """
-         Leak Check Confirmed 
+         Indication Investigation Confirmed
      """.format(submit_n_clicks)
      
 @app.callback(dash.dependencies.Output('output-provider2', 'children'),
